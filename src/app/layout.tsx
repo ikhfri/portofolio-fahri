@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
+import Navbar from "@/components/Navbar";
+// import ModeToggle from "@/components/Toggle";
+import {Roboto} from "next/font/google" 
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const roboto = Roboto({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -23,11 +21,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="en" className={roboto.className} suppressHydrationWarning>
+      <head />
+      <body >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="absolute justify-start items-center w-full h-full">
+            <Navbar />
+          </div>
+
+          {/* <div className="absolute top-4 right-4 z-30">
+            <ModeToggle />
+          </div> */}
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
