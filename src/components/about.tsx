@@ -24,10 +24,10 @@ const About = () => {
       <h1 className="text-4xl sm:text-5xl font-bold relative z-20 bg-clip-text text-transparent dark:bg-gradient-to-b from-neutral-200 to-neutral-500 py-4 bg-slate-900">
         About
       </h1>
-      <p className="text-lg w-[40rem] text-center flex flex-wrap justify-center">
+      <p className="text-lg w-full sm:w-[40rem] px-4 text-center flex flex-wrap justify-center">
         {text.split(" ").map((word, index) => {
           
-          const wordScrollThreshold = 50 * index; 
+          const wordScrollThreshold = 15 * index; 
           const isVisible = scrollPosition > wordScrollThreshold;
 
           return (

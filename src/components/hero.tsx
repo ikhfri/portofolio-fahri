@@ -7,10 +7,9 @@ import { FaGithub } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa6";
 
 
-
-export function Hero() {
+const Hero = () => {
   return (
-    <div className="h-[50rem] w-full flex dark:bg-black bg-slate-200 dark:bg-grid-big-white/[0.05] bg-grid-black/[0.05] relative  items-center justify-center">
+     <div className="h-[50rem] w-full flex dark:bg-black bg-slate-200 dark:bg-grid-big-white/[0.05] bg-grid-black/[0.05] relative  items-center justify-center">
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_10%,black)]"></div>
       <Spotlight/>
       <div className="flex flex-col   items-center justify-center">
@@ -25,7 +24,7 @@ export function Hero() {
           Ikhsan Fahri Gultom
         </h1>
 
-        <p className="text-lg text-center sm:text-xl font-medium text-slate-400 dark:text-neutral-300 relative z-20 mt-2 w-[40rem]">
+        <p className="text-lg text-center sm:text-xl font-medium text-slate-400 dark:text-neutral-300 relative z-20 mt-2 w-[30rem] sm:w-[40rem]">
           Web developer focused on creating modern, responsive, and
           user-friendly websites and applications.
         </p>
@@ -41,5 +40,7 @@ export function Hero() {
         </div>
       </div>
     </div>
-  );
+  )
 }
+
+export default Hero
